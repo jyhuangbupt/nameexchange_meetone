@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="style"><title></title><link href="/static/css/main.3e59e9d1.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/static/js/main.e4b9d0f4.js"></script></body><script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script><script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script>function IsPC() {
+		var userAgentInfo = navigator.userAgent;
+		var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+		var flag = true;
+		for (var v = 0; v < Agents.length; v++) {
+			if (userAgentInfo.indexOf(Agents[v]) > 0) {
+				flag = false;
+				break;
+			}
+		}
+		return flag;
+	}
+	if(!IsPC()){
+		let currentClientWidth, fontValue, originWidth;
+		//originWidth为设计稿原型的屏幕宽度，这里以Iphone6为原型设计稿
+		originWidth = 375;
+		__resize();
+		//注册resize事件
+		window.addEventListener('resize', __resize, false);
+		function __resize() {
+			currentClientWidth = document.documentElement.clientWidth;
+			//设置屏幕的最大最小时的默认宽度
+			if (currentClientWidth > 640) currentClientWidth = 640;
+			if (currentClientWidth < 320) currentClientWidth = 320;
+			fontValue = ((62.5 * currentClientWidth) / originWidth).toFixed(2);
+			document.documentElement.style.fontSize = fontValue + '%';
+		}
+	}else {
+		let fontValue = ((62.5 * document.documentElement.clientWidth) / 1100).toFixed(2);
+		document.documentElement.style.fontSize = fontValue + '%';
+	}</script><style>body,html{background:#f5f4f9;font-family:'微软雅黑'}</style></html>
